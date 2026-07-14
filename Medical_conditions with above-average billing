@@ -1,0 +1,19 @@
+WITH condition_billing AS (
+    SELECT
+        medical_condition,
+        AVG(billing_amount) AS condition_average
+    FROM healthcaredata2
+    GROUP BY medical_condition
+),
+overall_average AS (
+    SELECT
+        AVG(billing_amount) AS overall_average
+    FROM healthcaredata2
+)
+SELECT
+    c.medical_condition,
+    ROUND(c.condition_average, 2) AS condition_average
+FROM condition_billing c
+CROSS JOIN overall_average o
+WHERE c.condition_average > o.overall_average
+ORDER BY c.condition_average DESC;
