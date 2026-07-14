@@ -1,0 +1,6 @@
+SELECT
+COUNT(*) FILTER (WHERE patient_name IS NULL) AS missing_patient_name,
+COUNT(*) FILTER (WHERE hospital IS NULL) AS missing_hospital,
+COUNT(*) FILTER (WHERE doctor IS NULL) AS missing_doctor,
+COUNT(*) FILTER (WHERE billing_amount IS NULL) AS missing_billing
+FROM healthcaredata2;
