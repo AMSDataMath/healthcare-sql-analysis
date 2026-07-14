@@ -1,0 +1,8 @@
+SELECT
+    insurance_provider,
+    COUNT(*) AS diabetic_patients
+FROM healthcaredata2
+WHERE medical_condition = 'Diabetes'
+GROUP BY insurance_provider
+HAVING COUNT(*) > 500
+ORDER BY diabetic_patients DESC;
