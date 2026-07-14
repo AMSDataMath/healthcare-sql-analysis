@@ -1,0 +1,6 @@
+SELECT
+    insurance_provider,
+    COUNT(*) AS total_patients
+FROM healthcaredata2
+GROUP BY insurance_provider
+ORDER BY total_patients DESC;
