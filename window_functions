@@ -1,0 +1,18 @@
+WITH ranked_patients AS (
+    SELECT
+        patient_name,
+        hospital,
+        billing_amount,
+        ROW_NUMBER() OVER (
+            PARTITION BY hospital
+            ORDER BY billing_amount DESC
+        ) AS row_num
+    FROM healthcaredata2
+)
+SELECT
+    patient_name,
+    hospital,
+    billing_amount
+FROM ranked_patients
+WHERE row_num = 1
+ORDER BY billing_amount DESC;
