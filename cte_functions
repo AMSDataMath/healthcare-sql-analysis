@@ -1,0 +1,13 @@
+WITH insurance_averages AS (
+    SELECT
+        insurance_provider,
+        AVG(billing_amount) AS average_bill
+    FROM healthcaredata2
+    GROUP BY insurance_provider
+)
+SELECT
+    insurance_provider,
+    ROUND(average_bill, 2) AS average_bill
+FROM insurance_averages
+WHERE average_bill > 1500
+ORDER BY average_bill DESC;
