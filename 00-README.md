@@ -183,7 +183,7 @@ This project answers questions such as:
 
 ## Author
 
-Alfred Salviejo
+Alfredo Salviejo
 
 Healthcare Data Analyst Portfolio
 
