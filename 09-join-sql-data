@@ -1,0 +1,11 @@
+SELECT
+    h.patient_name,
+    h.hospital,
+    h.doctor,
+    h.medical_condition,
+    d.specialty,
+    d.years_experience,
+    d.office_phone
+FROM healthcaredata2 h
+JOIN doctors d
+ON h.doctor = d.doctor_name;
