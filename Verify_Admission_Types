@@ -1,0 +1,2 @@
+SELECT DISTINCT admission_type
+FROM healthcaredata2;
