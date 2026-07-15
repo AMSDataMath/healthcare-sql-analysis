@@ -1,0 +1,6 @@
+SELECT
+    patient_name,
+    COUNT(*)
+FROM healthcaredata2
+GROUP BY patient_name
+HAVING COUNT(*) > 1;
